@@ -38,7 +38,7 @@ def login_1(request):
         user = authenticate(username = username,password = password)
         if user is not None:
             login(request,user)
-            return redirect('logout')
+            return redirect('home')
         else:
             messages.error(request,'Invalid credencials')
             return render(request,'login.html')
@@ -49,5 +49,9 @@ def logout_1(request):
     print("@@@@@@@@@@@@@@@@@@@@@@@@@@")
     logout(request)                                                                                                                          
     return redirect('register')
+def home_1(request):
+    return render (request,'logout.html')
+
+
       
 
